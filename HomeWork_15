@@ -1,0 +1,20 @@
+
+Console.WriteLine("Insert number day of weak");
+int a = int.Parse(Console.ReadLine());
+if (a < 1 || a > 7)
+{
+    Console.WriteLine("Wrong, there is no such day");
+}
+else
+{
+    if (a > 5 && a < 8)
+
+    {
+        Console.WriteLine("Weekend");
+    }
+    else
+    {
+
+        Console.WriteLine("NO weekend");
+    }
+};
