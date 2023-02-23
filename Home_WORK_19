@@ -1,0 +1,43 @@
+// Задача 19
+// Напишите программу, которая принимает на вход пятизначное число и проверяет, является ли оно палиндромом.
+// 14212 -> нет
+// 12821 -> да
+// 23432 -> да
+
+
+
+
+Console.WriteLine("Insert number");
+int n = int.Parse(Console.ReadLine());
+int b = n;
+static int twoNumber(int n)
+{
+    while (n >= 10000) n /= 1000;
+    int a = n % 100;
+    return a;
+}
+
+static int lastNumber(int b)
+{
+    while (b >= 100000) b /= 10;
+    int z = b % 10;
+    while (b >= 10000) b /= 10;
+    int c = b % 10;
+
+    int x = z * 10 + c;
+
+    return x;
+}
+if (n > 99999)
+{
+    Console.WriteLine("To much number");
+}
+else if (lastNumber(b) < twoNumber(n) || lastNumber(b) > twoNumber(n))
+{
+    Console.WriteLine(" Not true " + twoNumber(n) + " and " + lastNumber(b));
+
+}
+else
+{
+    Console.WriteLine("True " + twoNumber(n) + " and " + lastNumber(b));
+};
