@@ -1,0 +1,15 @@
+// Задача 43: Напишите программу, которая найдёт точку пересечения двух прямых, заданных уравнениями y = k1 * x + b1, y = k2 * x + b2;
+// значения b1, k1, b2 и k2 задаются пользователем.
+// b1 = 2, k1 = 5, b2 = 4, k2 = 9 -> (-0,5; -0,5)
+Console.Write("Insert number B1: ");
+double b1 = int.Parse(Console.ReadLine());
+Console.Write("Insert number K1: ");
+double k1 = int.Parse(Console.ReadLine());
+Console.Write("Insert number B2: ");
+double b2 = int.Parse(Console.ReadLine());
+Console.Write("Insert number K2: ");
+double k2 = int.Parse(Console.ReadLine());
+double x = (b1-b2)/(k2-k1);
+double y = (k2*b1-k1*b2)/(k2-k1);
+
+Console.Write($"Cross point  OS x:{x} and OS y:{y}");
