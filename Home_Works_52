@@ -1,0 +1,64 @@
+// Задача 52. Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце.
+// Например, задан массив:
+// 1 4 7 2
+// 5 9 2 3
+// 8 4 2 4
+// Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.
+
+
+int[,] getArray(int row, int col, int B, int E)
+{
+    int[,] array = new int[row, col];
+    for (int i = 0; i < row; i++)
+    {
+        for (int j = 0; j < col; j++)
+        {
+            array[i, j] = new Random().Next(B, E);
+
+        }
+    }
+    return array;
+}
+
+void printArray(int[,] inArray)
+{
+    for (int i = 0; i < inArray.GetLength(0); i++)
+    {
+        for (int j = 0; j < inArray.GetLength(1); j++)
+        {
+            Console.Write($"{inArray[i, j]}\t");
+        }
+        Console.WriteLine();
+    }
+}
+double avarage(int[,] array, int row,double z)
+{
+
+for (int j = 0; j < array.GetLength(1); j++)
+{
+    double av = 0;
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        av = (av + array[i, j]);
+    }
+    av = av / row;
+    Console.Write(av + "; ");
+}
+return z;
+}
+Console.WriteLine();
+
+Console.Write("Insert size row: ");
+int row = int.Parse(Console.ReadLine()!);
+Console.Write("Insert size col: ");
+int col = int.Parse(Console.ReadLine()!);
+Console.Write("Insert  begin numbers: ");
+int B = int.Parse(Console.ReadLine()!);
+Console.Write("Insert ends numbers: ");
+int E = int.Parse(Console.ReadLine()!);
+int[,] array = getArray(row, col, B, E);
+double z = 1;
+
+printArray(array);
+Console.WriteLine("_____________________________");
+avarage(array,row,z);
